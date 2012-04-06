@@ -3,3 +3,63 @@ The Date-range picker is a highly interactive and configurable plugin that allow
 
 ##Initialization##
 The html source must abide the pattern below in order to have the date-rage picker work correctly.
+
+    <div class=”Your class name”>
+		<span>Insert the default date here</span>
+		<input type=”hidden” value=”default start date”/>
+		<input type=”hidden” value=”default end date”/>
+    </div>
+
+To initialize the date-range picker, just simply call drpicker on the div selection in javascript.
+
+
+
+##### Here is an example:
+
+    <div class=”example”>
+		<span>4/2/2012-4/5/2012</span>
+		<input type=”hidden” value=”4/2/2012”/>
+		<input type=”hidden” value=”4/5/20”/>
+    </div>
+
+To initialize the date-rangepicker, just simple do $(“.example”).drpicker();
+
+
+##Options
+
+You may pass an optional object parameter (JSON format) to further configure the plugin when initializing the plugin. 
+
+| Option          | Argument Type                | Default    |Effect                             |
+| --------------- | ---------------------------- | ---------- | --------------------------------- |
+|specificDate(arg)|Boolean                       | True       | Enable/disable specific date view |
+|dateRange(arg)   | Boolean                      | True       | Enable/disable date range view    |
+|afterDate(arg)   | Boolean                      | True       | Enable/disable after date view    |
+|startDate(arg)   | Date or String(“mm/dd/yyyy”) | Null       | Set the start date of the         |
+|endDate(arg)     | Date or String(“mm/dd/yyyy”) | Null       | Set the end date                  |
+|maxDate(arg)     | Date or String(“mm/dd/yyyy”) | new Date() | Set the maximum date allowed      |
+
+Example:
+
+    $(“.example”).drpicker({
+    				afterDate: false,
+    				startDate: “01/01/2011”,
+    				maxDate: ”03/12/2012”
+    });
+	
+$(“.example”).drpicker({
+					afterDate: false,
+					startDate: “01/01/2011”,
+					maxDate: ”03/12/2012”
+});
+
+##Methods
+
+You may call the following methods after the date-range picker is initialized.
+
+| Method            | Return Type          | Argument Type                    | Detail                                                  |
+| ----------------- | -------------------- | -------------------------------- | ------------------------------------------------------- |
+| setDate(arg)      | void                 | String (“mm/dd/yyyy-mm/dd/yyyy”) | The method takes two dates and must be separated by “-” |
+| setStartDate(arg) | void                 | String(“mm/dd/yyyy”)             | Set the start date                                      |
+| setEndDate(arg)   | void                 | String(“mm/dd/yyyy”)             | Set the end date                                        |
+| getStartDate()    | String(“mm/dd/yyyy”) | n/a                              |Get the current start date                               |
+| getEndDate()      |String(“mm/dd/yyyy”)  | n/a                              |Get the current end date                                 |
