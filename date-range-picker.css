@@ -1,0 +1,254 @@
+.dp-label {
+    background-color: white;
+    border: 1px solid #AAA;
+    display: inline-block;
+    position: relative;
+    padding: 3px 4px;
+    padding-right: 25px;
+    z-index: 2;
+}
+
+.dp-label:hover, 
+.dp-label:hover .dp-arrow
+{
+    border-color: #999;
+}
+
+.dp-label:hover .dp-down {
+    border-top-color: #000;
+}
+
+.dp-label:hover .dp-up {
+    border-bottom-color: #000;
+}
+.dp-label:hover .dp-arrow {
+    background-color: #DDD;
+}
+
+.dp-arrow {
+    border-left: 1px solid #AAA;
+    background-color: #EEE;
+    width: 20px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.dp-down, .dp-up {
+    display:inline;
+    width:0px; 
+    height:0px; 
+    border-left:5px solid transparent;
+    border-right:5px solid transparent;
+    border-top:5px solid #999;
+    font-size:0px;
+    line-height:0px;
+    position: absolute;
+    margin: 9px 0 0 5px;
+}
+
+.dp-up {
+    border-top: 0px;
+    border-bottom:5px solid #999;
+}
+
+.dp-label span{
+    font-family:arial;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.dp-menu {
+    width:100px;
+    background-color: #FFF;
+    position:absolute;
+}
+
+.dp-menu, .pickerView {
+    box-shadow: 0 1px 5px #999;
+}
+
+.dp-menu ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+    border: 1px solid #AAA;
+    border-top: 1px solid #EEE;
+    border-right: none;
+	border-left:none;
+}
+
+.dp-menu li{
+    color: #333;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    padding: 5px;
+    cursor:pointer;
+    position: relative;
+}
+
+.dp-menu li:hover {
+    color: #000;
+    background-color: #EEE;
+}
+
+.dp-menu .dp-selected, .dp-menu .dp-selected:hover {
+    color: #000;
+    background-color: #DDD;
+    margin: -1px;
+    border: 1px solid #999;
+    border-width: 1px 0 1px 1px;
+    z-index: 1;
+}
+
+.dp-menu .dp-selected-mirror, .dp-menu .dp-selected-mirror:hover {
+    color: #000;
+    background-color: #DDD;
+    margin: -1px;
+    border: 1px solid #999;
+    border-width: 1px 1px 1px 0;
+    z-index: 1;
+}
+
+.mirror {
+	border-width: 1px 1px 1px 0;
+}
+
+.dp-menu a {
+    text-decoration:none;
+    color:black;
+}
+
+.dp-menu a:hover {
+    color:white;
+}
+
+.dp-cancel {
+    height: 20px;
+    width: 32px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    box-shadow: none;
+    margin-right: -4px;
+    margin-top: 12px;
+}
+
+.dp-today {
+    display:inline-block;
+    margin-left:4px;
+    vertical-align:middle;
+}
+
+.pickerView { 
+    background: #DDD;
+    position:absolute;
+    padding: 7px;
+    border: 1px solid #999;
+}
+
+.dp-hid{
+    display:none;
+}
+
+.dp-err_msg{
+    color:red;
+    margin-left:5px;
+    display:none;
+}
+
+td.dp-highlight, 
+.dp-highlight .ui-state-default,
+td.dp-highlight td.ui-state-active,
+table .highlight_history .ui-state-hover:hover
+{
+    border-color: #5F83B9; 
+    background-color: #5F83B9;
+    color:white;
+}
+
+.highlight_history, 
+.highlight_history .ui-state-active,
+table .highlight_history .ui-state-active
+{
+    background-color: #FFF2AB;
+	border-color:transparent;
+}
+
+
+.highlight_history .ui-state-default 
+{
+    border-color: #FFF2AB;
+    color: #4F4F4F;
+    text-shadow: none;
+}
+
+.dp-date-seperator {
+    font-family: monospace;
+    font-size: 11px;
+    color: #333;
+    padding: 0 4px;
+}
+
+input[type="text"].dp-date-display  {
+    width:75px;
+    height:20px;
+    display:inline-block;
+    border: solid 1px #999;
+    padding: 2px;
+}
+
+input[type="text"].dp-active {
+    border-color: #0000ff;
+}
+
+input[type="text"].dp-error {
+    border-color:red;
+}
+
+.dp-btn-container {
+    padding-bottom: 7px;
+    border-bottom: solid 1px #CCC;
+    margin-bottom: 7px;
+}
+
+.dp-btn-container .apply {
+    margin-left: 5px;
+}
+
+.dp-container {
+    margin-top: -1px;
+    position: relative;
+}
+
+.dp-container .ui-datepicker-inline {
+    border: 1px solid #CCC;
+}
+
+/** Overrides are below */
+
+.dp-container .ui-state-default, 
+.dp-container .ui-widget-content .ui-state-default, 
+.dp-container .ui-widget-header .ui-state-default,
+.dp-container .ui-datepicker,
+.pickerView .ui-dialog {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.dp-container .ui-datepicker table .ui-state-highlight {
+    border-color: transparent;
+}
+
+.dp-container div.ui-datepicker {
+    font-size: 11px;
+}
+
+.ui-datepicker-multi-3 .ui-datepicker-group { width:33.33%; }
+
+/* Hack for webkit browsers */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .ui-datepicker-multi-3 .ui-datepicker-group-middle { width:33.8%; }
+}

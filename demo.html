@@ -1,0 +1,43 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery-1.7.1.js"></script>
+<script type="text/javascript" src="jquery-ui-1.8.16.custom.js"></script>
+<script type="text/javascript" src="date-range-picker.js"></script>
+<link rel="stylesheet" type="text/css" href="date-range-picker.css"/>
+<link rel="stylesheet" type="text/css" href="Aristo/jquery-ui-1.8.7.custom.css"/>
+</head>
+<body>
+
+<h1>Date-range Picker Demo</h1>
+
+<h3>Demo 1: Single date</h3>
+<div class="datepicker">
+<span>02/11/2012</span>
+<input id="start_date" type="hidden" value="02/11/2012" name="start_date"/>
+<input id="end_date" type="hidden" value="02/11/2012" name="end_date"/>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<h3>Demo 2: Date Range</h2>
+<div class="datepicker"  style="float:right">
+<span>02/11/2010-6/3/2011</span>
+<input id="start_date" type="hidden" value="02/11/2010" name="start_date"/>
+<input id="end_date" type="hidden" value="6/3/2011" name="end_date"/>
+</div>
+</body>
+</html>
+
+<script>
+$(".datepicker").each(function(){
+	$(this).drpicker();
+})
+</script>
