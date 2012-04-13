@@ -59,7 +59,6 @@
         var btn_container = $("<div class='dp-btn-container' />");
 
         var buttons = $("<button class='apply' disabled='disabled'>Apply</button>");
-		//var close_btn = $('<span class="dp-cancel"><a class="ui-dialog-titlebar-close ui-corner-all" href="#" role="button"> <span class="ui-icon ui-icon-closethick">close</span></a></span>');
         var close_btn = $('<span class="dp-cancel ui-dialog"><a class="ui-dialog-titlebar-close ui-corner-all" href="#" role="button"> <span class="ui-icon ui-icon-closethick">close</span></a></span>');
         // create specific date view
         elementsCache.spec_date_input = $("<input type='text' class='dp-date-display' value='' />");
@@ -92,7 +91,7 @@
         // create after date view
         var container3 = btn_container.clone();
         elementsCache.after_date_input = $("<input type='text' class='dp-date-display' value=''>");
-        elementsCache.after_date_input2 = $("<span>Today</span>");
+        elementsCache.after_date_input2 = $("<span class='dp-today-text'>today</span>");
         var until = $("<span class='dp-date-seperator'>-</span>");
         elementsCache.cal3 = $("<div></div>");
         elementsCache.after_date_view = $("<div class='after-date-view dp-hid'></div>");
@@ -214,11 +213,12 @@
 				var h1=doc_height-label.offset().top-label.outerHeight();
 				var h2=elementsCache.picker.outerHeight();
 				if (h1<h2) {
-					var menu_top=label.offset().top-elementsCache.menu.outerHeight();
-					var picker_top=label.offset().top-elementsCache.picker.outerHeight();
+					var menu_top=label.offset().top-elementsCache.menu.outerHeight() +1;
+					var picker_top=label.offset().top-elementsCache.picker.outerHeight() +1;
 					elementsCache.menu.offset({top:menu_top});
 					elementsCache.picker.offset({top:picker_top});
 					elementsCache.flipup=true;
+                    elementsCache.container.addClass('dp-flip-up');
 				}
 			} else {
 				flipDown(elementsCache);
@@ -253,6 +253,7 @@
 					elementsCache.picker.offset({left:picker_left,top:_top});
 				}
 				elementsCache.flipleft=true;
+                elementsCache.container.addClass('dp-flip-left');
 			}
 		}
 		
@@ -549,7 +550,6 @@
 
 		function apply(btn) {
 			var view = btn.parent().parent();
-			//var id = view.attr("id");
 			if (view.hasClass("spec-date-view")) {
 				var date = elementsCache.spec_date_input.attr("value");
 				$.datepicker.parseDate("mm/dd/yy",date);

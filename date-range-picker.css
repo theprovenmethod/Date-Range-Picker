@@ -76,7 +76,20 @@
     border: 1px solid #AAA;
     border-top: 1px solid #EEE;
     border-right: none;
-	border-left:none;
+}
+
+.dp-flip-left .dp-menu ul{
+    border: 1px solid #AAA;
+    border-bottom: 1px solid #EEE;
+    border-left: none;
+}
+.dp-flip-left .dp-menu .dp-selected ,
+.dp-flip-left .dp-menu .dp-selected:hover {
+    border-width: 1px 1px 1px 0;
+}
+
+.dp-today-text {
+    color: #333;
 }
 
 .dp-menu li{
@@ -109,10 +122,6 @@
     border: 1px solid #999;
     border-width: 1px 1px 1px 0;
     z-index: 1;
-}
-
-.mirror {
-	border-width: 1px 1px 1px 0;
 }
 
 .dp-menu a {
@@ -173,7 +182,6 @@ table .highlight_history .ui-state-hover:hover
 table .highlight_history .ui-state-active
 {
     background-color: #FFF2AB;
-	border-color:transparent;
 }
 
 
