@@ -450,7 +450,8 @@
             }
         });
 
-        elementsCache.picker.find(".apply").bind("click", function() {
+        elementsCache.picker.find(".apply").bind("click", function (e) {
+            e.preventDefault();
             var $this = $(this);
 			var hasErr=false;
 			$this.parent().find("input").each(function(){
